@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono) !important;
+  }
+}
+
+/* Gradient System */
+:root {
+  --cx1: 30%;
+  --cy1: 40%;
+  --cx2: 70%;
+  --cy2: 60%;
+  
+  --orb1: radial-gradient(ellipse 800px 800px at var(--cx1) var(--cy1),
+            rgba(252, 224, 67, 0.65) 0%, transparent 70%);
+  --orb2: radial-gradient(ellipse 700px 700px at var(--cx2) var(--cy2),
+            rgba(124, 58, 237, 0.55) 0%, transparent 65%);
+  --orb3: radial-gradient(ellipse 600px 800px at 60% 70%,
+            rgba(255, 255, 255, 0.9) 0%, transparent 60%);
+}
+
+.gradient-bg {
+  background: var(--orb1), var(--orb2), var(--orb3), #F8F5F0;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(var(--tw-rotate, 0deg)); }
+  50% { transform: translateY(-12px) rotate(var(--tw-rotate, 0deg)); }
+  100% { transform: translateY(0px) rotate(var(--tw-rotate, 0deg)); }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite 3.5s;
+}
+
+/* Grain texture */
+.grain-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: var(--grain-opacity, 0.08);
+}
+
+.grain-bg::before {
+    content: "";
+    position: absolute;
+    inset: -200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.8;
+}
+
+.grain-landing { --grain-opacity: 0.16; }
+.grain-app { --grain-opacity: 0.10; }
+.grain-exercise { --grain-opacity: 0.04; }
+
+/* Glassmorphism System */
+.glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 4px 24px rgba(26,24,20,0.06);
+}
+
+.glass-heavy {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(28px) saturate(180%);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+}

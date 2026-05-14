@@ -1,0 +1,39 @@
+{
+  "problem_statement": "Convert the tokenized vocabulary into fixed-length integer sequences with padding for the Pokémon neural network.",
+  "code_with_blanks": "def pad_sequences(token_ids, max_len, pad_value=0):\n    padded = []\n    for ids in token_ids:\n        if len(ids) ___ max_len:\n            padded.append(ids[:max_len])\n        else:\n            padding_needed = max_len - ___\n            padded.append(ids + [___] * padding_needed)\n    return padded\n\n# Example inputs\nsequences = [[1, 4, 7], [2, 5]]\nresult = pad_sequences(sequences, max_len=4)\nprint(result)",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "expected_answer": ">",
+      "error_type_tested": "logic",
+      "line_context": "if len(ids) ___ max_len:"
+    },
+    {
+      "blank_id": 2,
+      "expected_answer": "len(ids)",
+      "error_type_tested": "logic",
+      "line_context": "padding_needed = max_len - ___"
+    },
+    {
+      "blank_id": 3,
+      "expected_answer": "pad_value",
+      "error_type_tested": "scope",
+      "line_context": "padded.append(ids + [___] * padding_needed)"
+    }
+  ],
+  "intermediate_outputs": [
+    {
+      "line_number": 8,
+      "variable_name": "padded_sequence",
+      "actual_type": "List[int]",
+      "actual_shape": "(4,)",
+      "actual_sample": "[2, 5, 0, 0]",
+      "prediction_options": ["List[int]", "int", "List[str]", "Tensor"]
+    }
+  ],
+  "semantic_tags": [
+    {"line_range": [1, 2], "tag": "scaffold"},
+    {"line_range": [3, 9], "tag": "core_logic"},
+    {"line_range": [12, 14], "tag": "output"}
+  ]
+}

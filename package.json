@@ -1,0 +1,12 @@
+{
+  "name": "graduent-root",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:backend": "cd backend && python -m uvicorn main:app --reload --port 8000",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "npx concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

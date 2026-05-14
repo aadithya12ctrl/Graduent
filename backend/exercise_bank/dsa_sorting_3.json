@@ -1,0 +1,37 @@
+{
+  "problem_statement": "Implement Quick Sort to organize the Pokédex even faster.",
+  "code_with_blanks": "def quick_sort(pokemon_list):\n    if len(pokemon_list) <= 1:\n        return pokemon_list\n    else:\n        pivot = pokemon_list[0]\n        less = [p for p in pokemon_list[1:] if p['attack'] <= ___]\n        greater = [p for p in pokemon_list[1:] if p['attack'] ___ pivot['attack']]\n        return quick_sort(___) + [pivot] + quick_sort(greater)",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "expected_answer": "pivot['attack']",
+      "error_type_tested": "logic",
+      "line_context": "less = [p for p in pokemon_list[1:] if p['attack'] <= ___]"
+    },
+    {
+      "blank_id": 2,
+      "expected_answer": ">",
+      "error_type_tested": "logic",
+      "line_context": "greater = [p for p in pokemon_list[1:] if p['attack'] ___ pivot['attack']]"
+    },
+    {
+      "blank_id": 3,
+      "expected_answer": "less",
+      "error_type_tested": "logic",
+      "line_context": "return quick_sort(___) + [pivot] + quick_sort(greater)"
+    }
+  ],
+  "intermediate_outputs": [
+    {
+      "line_number": 6,
+      "variable_name": "less",
+      "actual_type": "List[Dict]",
+      "actual_shape": "Variable length",
+      "actual_sample": "[{'name': 'Squirtle', 'attack': 48}]",
+      "prediction_options": ["List[Dict]", "Dict", "int", "bool"]
+    }
+  ],
+  "semantic_tags": [
+    {"line_range": [1, 8], "tag": "core_logic"}
+  ]
+}

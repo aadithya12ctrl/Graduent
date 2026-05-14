@@ -1,0 +1,39 @@
+{
+  "problem_statement": "Build a basic tokenizer that splits Pokémon attack descriptions into individual word tokens.",
+  "code_with_blanks": "def tokenize_moves(description):\n    # Split the Pokémon move description into tokens\n    tokens = description.___('  ')\n    \n    # Convert all tokens to lowercase\n    clean_tokens = [token.___ for token in tokens]\n    \n    # Remove empty strings\n    final_tokens = [t for t in clean_tokens if t != ___]\n    \n    return final_tokens\n\n# Test with Pikachu's Thunderbolt\nmove_desc = \"Pikachu uses THUNDERBOLT with great power\"\nresult = tokenize_moves(move_desc)\nprint(result)",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "expected_answer": "split",
+      "error_type_tested": "logic",
+      "line_context": "tokens = description.___(' ')"
+    },
+    {
+      "blank_id": 2,
+      "expected_answer": "lower()",
+      "error_type_tested": "syntax",
+      "line_context": "clean_tokens = [token.___ for token in tokens]"
+    },
+    {
+      "blank_id": 3,
+      "expected_answer": "''",
+      "error_type_tested": "logic",
+      "line_context": "final_tokens = [t for t in clean_tokens if t != ___]"
+    }
+  ],
+  "intermediate_outputs": [
+    {
+      "line_number": 3,
+      "variable_name": "tokens",
+      "actual_type": "List[str]",
+      "actual_shape": "(7,)",
+      "actual_sample": "['Pikachu', 'uses', 'THUNDERBOLT', 'with', 'great', 'power']",
+      "prediction_options": ["List[str]", "str", "Dict[str, int]", "Tuple[str]"]
+    }
+  ],
+  "semantic_tags": [
+    {"line_range": [1, 2], "tag": "scaffold"},
+    {"line_range": [3, 8], "tag": "core_logic"},
+    {"line_range": [11, 13], "tag": "output"}
+  ]
+}

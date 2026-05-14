@@ -1,0 +1,39 @@
+{
+  "problem_statement": "Implement Bubble Sort to organize Pokémon by their attack stats.",
+  "code_with_blanks": "def sort_by_attack(pokemon_list):\n    n = len(pokemon_list)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if pokemon_list[j]['attack'] ___ pokemon_list[j + 1]['attack']:\n                # Swap the pokemon\n                temp = pokemon_list[___]\n                pokemon_list[j] = pokemon_list[j + 1]\n                pokemon_list[j + 1] = ___\n    return pokemon_list\n\n# Example inputs\npokemon = [{'name': 'Pikachu', 'attack': 55}, {'name': 'Charizard', 'attack': 84}, {'name': 'Squirtle', 'attack': 48}]\nresult = sort_by_attack(pokemon)\nprint(result)",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "expected_answer": ">",
+      "error_type_tested": "logic",
+      "line_context": "if pokemon_list[j]['attack'] ___ pokemon_list[j + 1]['attack']:"
+    },
+    {
+      "blank_id": 2,
+      "expected_answer": "j",
+      "error_type_tested": "logic",
+      "line_context": "temp = pokemon_list[___]"
+    },
+    {
+      "blank_id": 3,
+      "expected_answer": "temp",
+      "error_type_tested": "logic",
+      "line_context": "pokemon_list[j + 1] = ___"
+    }
+  ],
+  "intermediate_outputs": [
+    {
+      "line_number": 5,
+      "variable_name": "comparison",
+      "actual_type": "bool",
+      "actual_shape": "scalar",
+      "actual_sample": "True",
+      "prediction_options": ["bool", "int", "str", "Dict"]
+    }
+  ],
+  "semantic_tags": [
+    {"line_range": [1, 4], "tag": "scaffold"},
+    {"line_range": [5, 9], "tag": "core_logic"},
+    {"line_range": [12, 15], "tag": "output"}
+  ]
+}

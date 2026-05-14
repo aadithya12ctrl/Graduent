@@ -1,0 +1,45 @@
+{
+  "problem_statement": "Build a vocabulary from tokenized Pokémon move descriptions, mapping each unique token to an integer ID.",
+  "code_with_blanks": "def build_vocab(token_lists):\n    vocab = ___\n    idx = 0\n    \n    for tokens in token_lists:\n        for token in tokens:\n            if token not in ___:\n                vocab[token] = ___\n                idx ___ 1\n    \n    return vocab\n\n# Pokémon move descriptions\nmoves = [\n    ['pikachu', 'uses', 'thunderbolt'],\n    ['charizard', 'uses', 'flamethrower'],\n]\nresult = build_vocab(moves)\nprint(result)",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "expected_answer": "{}",
+      "error_type_tested": "logic",
+      "line_context": "vocab = ___"
+    },
+    {
+      "blank_id": 2,
+      "expected_answer": "vocab",
+      "error_type_tested": "logic",
+      "line_context": "if token not in ___:"
+    },
+    {
+      "blank_id": 3,
+      "expected_answer": "idx",
+      "error_type_tested": "logic",
+      "line_context": "vocab[token] = ___"
+    },
+    {
+      "blank_id": 4,
+      "expected_answer": "+=",
+      "error_type_tested": "syntax",
+      "line_context": "idx ___ 1"
+    }
+  ],
+  "intermediate_outputs": [
+    {
+      "line_number": 2,
+      "variable_name": "vocab",
+      "actual_type": "Dict[str, int]",
+      "actual_shape": "{} initially",
+      "actual_sample": "{}",
+      "prediction_options": ["Dict[str, int]", "List[str]", "Set[str]", "int"]
+    }
+  ],
+  "semantic_tags": [
+    {"line_range": [1, 3], "tag": "scaffold"},
+    {"line_range": [5, 9], "tag": "core_logic"},
+    {"line_range": [13, 18], "tag": "output"}
+  ]
+}

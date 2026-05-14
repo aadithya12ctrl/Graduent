@@ -1,0 +1,25 @@
+{
+  "problem_statement": "Tokenize text for a Large Language Model using Byte Pair Encoding (BPE) principles on Pokémon names.",
+  "code_with_blanks": "def get_stats(vocab):\n    pairs = {}\n    for word, freq in vocab.items():\n        symbols = word.split()\n        for i in range(len(symbols) - 1):\n            pair = (symbols[i], symbols[i + 1])\n            pairs[pair] = pairs.get(pair, 0) + ___\n    return pairs\n\n# Example vocab with frequencies\nvocab = {'p i k a c h u </w>': 5, 'c h a r i z a r d </w>': 2}\nstats = get_stats(vocab)\nprint(stats)",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "expected_answer": "freq",
+      "error_type_tested": "logic",
+      "line_context": "pairs[pair] = pairs.get(pair, 0) + ___"
+    }
+  ],
+  "intermediate_outputs": [
+    {
+      "line_number": 8,
+      "variable_name": "pairs",
+      "actual_type": "Dict[Tuple[str, str], int]",
+      "actual_shape": "Variable",
+      "actual_sample": "{('p', 'i'): 5, ('i', 'k'): 5}",
+      "prediction_options": ["Dict[Tuple[str, str], int]", "List[str]", "int", "Tuple"]
+    }
+  ],
+  "semantic_tags": [
+    {"line_range": [1, 9], "tag": "core_logic"}
+  ]
+}
