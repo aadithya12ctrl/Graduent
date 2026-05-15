@@ -2,7 +2,7 @@
 
 > **"Learn to understand code. Not recognize it."**
 
-Graduent is a next-generation coding education platform that transforms the learning experience from a static sequence of videos into a dynamic, evolving architecture. Built on a foundation of LLM-orchestrated adaptive intelligence, Graduent modifies itself in real-time based on your unique error profile, cognitive biases, and mastery level.
+Graduent is a next-generation coding education platform that transforms the core of learning experience from a static sequence of videos into a dynamic, evolving architecture. Built on a foundation of LLM-orchestrated adaptive intelligence, Graduent modifies itself in real-time based on your unique error profile, cognitive biases, and mastery level.
 
 ---
 
